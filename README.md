@@ -1,6 +1,8 @@
 # QuantaLang TextMate Grammar
 
-Official TextMate grammar for **[QuantaLang](https://github.com/HarperZ9/quantalang)** - The Effects Language.
+Official TextMate grammar for **[QuantaLang](https://github.com/HarperZ9/quantalang)**.
+This is the small editor-facing layer that teaches syntax highlighters how to
+read `.quanta` files without carrying compiler behavior or backend claims.
 
 ## What this is
 
