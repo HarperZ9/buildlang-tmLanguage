@@ -29,7 +29,7 @@ QuantaLang is an effects-oriented systems language. Keywords in this grammar fal
 - **Macros** - `macro`, `macro_rules`
 - **Reserved** - `abstract`, `become`, `do`, `final`, `override`, `priv`, `try`, `yield`, `union`, `default`, `auto`, `box`
 
-Primitive types recognized: `i8` · `i16` · `i32` · `i64` · `i128` · `isize` · `u8` · `u16` · `u32` · `u64` · `u128` · `usize` · `f32` · `f64` · `bool` · `char` · `str` · `String` · common standard types (`Vec`, `Option`, `Result`, `Box`, `Rc`, `Arc`, `HashMap`, `HashSet`, `BTreeMap`, `BTreeSet`).
+Primitive types recognized: `i8`, `i16`, `i32`, `i64`, `i128`, `isize`, `u8`, `u16`, `u32`, `u64`, `u128`, `usize`, `f32`, `f64`, `bool`, `char`, `str`, `String`, and common standard types (`Vec`, `Option`, `Result`, `Box`, `Rc`, `Arc`, `HashMap`, `HashSet`, `BTreeMap`, `BTreeSet`).
 
 ## Using this grammar
 
