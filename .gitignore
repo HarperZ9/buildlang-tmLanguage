@@ -1,0 +1,8 @@
+.env
+.env.*
+.warden-safe-cache/
+node_modules/
+out/
+dist/
+*.log
+*.tmp
