@@ -1,0 +1,54 @@
+name: Release Artifacts
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate grammar files
+        run: |
+          python -m json.tool grammars/quantalang.tmLanguage.json > /dev/null
+          python -m json.tool language-configuration.json > /dev/null
+      - name: Build source package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZIP_DEFLATED, ZipFile
+
+          root = Path(".")
+          dist = root / "dist"
+          dist.mkdir(exist_ok=True)
+          include_roots = [
+              "grammars",
+              "samples",
+              "AUTHORS.md",
+              "CHANGELOG.md",
+              "CONTRIBUTING.md",
+              "LICENSE",
+              "README.md",
+              "RELEASE.md",
+              "language-configuration.json",
+          ]
+          with ZipFile(dist / "quantalang-tmLanguage-0.1.0.zip", "w", ZIP_DEFLATED) as zf:
+              for item in include_roots:
+                  path = root / item
+                  if path.is_dir():
+                      for file in path.rglob("*"):
+                          if file.is_file():
+                              zf.write(file, file.as_posix())
+                  elif path.is_file():
+                      zf.write(path, path.as_posix())
+          PY
+      - uses: actions/upload-artifact@v5
+        with:
+          name: quantalang-tmLanguage-source-package
+          path: dist/quantalang-tmLanguage-0.1.0.zip
