@@ -1,5 +1,14 @@
 # QuantaLang TextMate Grammar
 
+> The editor-facing TextMate grammar that teaches syntax highlighters how to read `.quanta` files.
+
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![grammar](https://img.shields.io/badge/grammar-TextMate-blue.svg)
+![version](https://img.shields.io/badge/version-0.1.0-informational.svg)
+[![CI](https://github.com/HarperZ9/quantalang-tmLanguage/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/quantalang-tmLanguage/actions/workflows/ci.yml)
+![deps: none](https://img.shields.io/badge/deps-none-success.svg)
+[![part of: Quanta ecosystem](https://img.shields.io/badge/part_of-Quanta_ecosystem-00b3a4.svg)](https://github.com/HarperZ9/quanta-universe)
+
 Official TextMate grammar for **[QuantaLang](https://github.com/HarperZ9/quantalang)**.
 This is the small editor-facing layer that teaches syntax highlighters how to
 read `.quanta` files without carrying compiler behavior or backend claims.
