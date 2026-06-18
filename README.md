@@ -42,6 +42,19 @@ QuantaLang is an effects-oriented systems language. Keywords in this grammar fal
 
 Primitive types recognized: `i8`, `i16`, `i32`, `i64`, `i128`, `isize`, `u8`, `u16`, `u32`, `u64`, `u128`, `usize`, `f32`, `f64`, `bool`, `char`, `str`, `String`, and common standard types (`Vec`, `Option`, `Result`, `Box`, `Rc`, `Arc`, `HashMap`, `HashSet`, `BTreeMap`, `BTreeSet`).
 
+## Usage
+
+This is a TextMate grammar package, not a compiler or runnable program: there is
+no CLI to run and nothing to import. "Using" it means installing the grammar into
+a TextMate-compatible editor (or consuming it via github-linguist) so `.quanta`
+files get syntax highlighting. See **[USAGE.md](USAGE.md)** for install steps per
+editor, the grammar's scope name and file type, the JSON-validation/packaging
+commands, and worked highlighting examples.
+
+The compiler and any `quantac` command live in the separate
+[`HarperZ9/quantalang`](https://github.com/HarperZ9/quantalang) repository, not
+here.
+
 ## Using this grammar
 
 ### VS Code
