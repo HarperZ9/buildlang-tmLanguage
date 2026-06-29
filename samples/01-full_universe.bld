@@ -2,7 +2,7 @@
 // EXAMPLE: Full Universe Integration
 // Demonstrates: ALL 22 MODULES working together
 // ═══════════════════════════════════════════════════════════════════════════════
-// This example showcases the complete QUANTA-UNIVERSE ecosystem with all
+// This example showcases the complete BUILD-UNIVERSE ecosystem with all
 // modules from every layer collaborating as a unified system.
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -14,14 +14,14 @@ use foundation::time::{Instant, Duration}
 // ─────────────────────────────────────────────────────────────────────────────
 // LAYER 0: FOUNDATION
 // ─────────────────────────────────────────────────────────────────────────────
-use quantalang  // The language itself
+use buildlang  // The language itself
 use foundation::{Result, Error}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // LAYER 1: CORE
 // ─────────────────────────────────────────────────────────────────────────────
-use quantaos::{Process, Thread, Scheduler, Message, IPC}
-use axiom::{QuantaEvolution, DifferentiableAST, NeuralArchitectureSearch, DualNumber}
+use buildos::{Process, Thread, Scheduler, Message, IPC}
+use axiom::{BuildEvolution, DifferentiableAST, NeuralArchitectureSearch, DualNumber}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // LAYER 2: RENDERING
@@ -65,11 +65,11 @@ use forge::{Debugger, Profiler, MemoryAnalyzer, PerformanceReport}
 use universe::{Universe, init, universe, Message as UniverseMessage}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// THE QUANTA APPLICATION
+// THE BUILD APPLICATION
 // ═══════════════════════════════════════════════════════════════════════════════
 
-/// The complete QUANTA application demonstrating all modules
-pub struct QuantaApplication {
+/// The complete BUILD application demonstrating all modules
+pub struct BuildApplication {
     // Core systems
     universe: Universe,
     scheduler: Scheduler,
@@ -85,7 +85,7 @@ pub struct QuantaApplication {
     oracle: Oracle,
 
     // AI systems
-    axiom: QuantaEvolution,
+    axiom: BuildEvolution,
     ml_ensemble: Vec<Box<dyn MLModel>>,
 
     // Integration
@@ -102,10 +102,10 @@ pub struct QuantaApplication {
     frame_count: u64,
 }
 
-impl QuantaApplication {
+impl BuildApplication {
     pub fn new() -> Result<Self, Error> {
         println!("╔═══════════════════════════════════════════════════════════════╗");
-        println!("║  QUANTA-UNIVERSE Full Integration                             ║");
+        println!("║  BUILD-UNIVERSE Full Integration                             ║");
         println!("║  All 22 Modules Working Together                              ║");
         println!("╚═══════════════════════════════════════════════════════════════╝");
         println!();
@@ -116,8 +116,8 @@ impl QuantaApplication {
         let uni = universe();
         println!("  ✓ Universe initialized with {} modules", uni.module_count());
 
-        // Initialize QuantaOS scheduler
-        println!("Initializing QuantaOS...");
+        // Initialize BuildOS scheduler
+        println!("Initializing BuildOS...");
         let scheduler = Scheduler::new();
         println!("  ✓ Scheduler ready");
 
@@ -140,7 +140,7 @@ impl QuantaApplication {
 
         // Initialize AI systems
         println!("Initializing AI Systems...");
-        let axiom = QuantaEvolution::new(100, 0.1, 0.01);
+        let axiom = BuildEvolution::new(100, 0.1, 0.01);
         let ml_ensemble: Vec<Box<dyn MLModel>> = vec![
             Box::new(RandomForest::new(100, 10)),
             Box::new(GradientBoosting::new(100, 0.1)),
@@ -150,7 +150,7 @@ impl QuantaApplication {
 
         // Initialize integration
         println!("Initializing Integration Layer...");
-        let sync_engine = SyncEngine::new("QUANTA-Main");
+        let sync_engine = SyncEngine::new("BUILD-Main");
         let preset_engine = PresetEngine::new();
         let calibrator = DisplayCalibrator::new();
         println!("  ✓ Entangle + Nova + Calibrate ready");
@@ -166,7 +166,7 @@ impl QuantaApplication {
         println!("  All systems initialized!");
         println!("═══════════════════════════════════════════════════════════════════");
 
-        Ok(QuantaApplication {
+        Ok(BuildApplication {
             universe: uni,
             scheduler,
             render_engine,
@@ -198,7 +198,7 @@ impl QuantaApplication {
             println!("  Cycle {}/5", cycle);
             println!("────────────────────────────────────────────────────────────────\n");
 
-            // Process scheduler (QuantaOS)
+            // Process scheduler (BuildOS)
             self.process_scheduler();
 
             // Render frame (Photon + Spectrum + Lumina + Neutrino)
@@ -223,7 +223,7 @@ impl QuantaApplication {
     }
 
     fn process_scheduler(&mut self) {
-        println!("  [QuantaOS] Scheduling processes...");
+        println!("  [BuildOS] Scheduling processes...");
 
         // Create and schedule some tasks
         let tasks = vec!["render", "ai_inference", "trading", "sync"];
@@ -352,7 +352,7 @@ impl QuantaApplication {
     fn print_final_report(&self) {
         println!();
         println!("╔═══════════════════════════════════════════════════════════════╗");
-        println!("║  QUANTA-UNIVERSE Session Report                               ║");
+        println!("║  BUILD-UNIVERSE Session Report                               ║");
         println!("╠═══════════════════════════════════════════════════════════════╣");
         println!("║  Modules Active:        22                                    ║");
         println!("║  Frames Rendered:       {:>5}                                  ║", self.frame_count);
@@ -364,8 +364,8 @@ impl QuantaApplication {
         println!("║         All 22 modules successfully demonstrated!            ║");
         println!("║                                                               ║");
         println!("║  Layers Used:                                                 ║");
-        println!("║    0: Foundation (quantalang, foundation)                     ║");
-        println!("║    1: Core (quantaos, axiom)                                  ║");
+        println!("║    0: Foundation (buildlang, foundation)                     ║");
+        println!("║    1: Core (buildos, axiom)                                  ║");
         println!("║    2: Rendering (photon, spectrum, chromatic, lumina,         ║");
         println!("║                  neutrino, prism, refract, nexus)             ║");
         println!("║    3: Trading (quantum-finance, field-tensor, delta, entropy) ║");
@@ -405,7 +405,7 @@ pub struct ProfileReport {
     memory_mb: f64,
 }
 
-impl QuantaEvolution {
+impl BuildEvolution {
     fn generation(&self) -> usize { 50 }
 }
 
@@ -446,7 +446,7 @@ fn rand() -> f64 {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 fn main() -> Result<(), Error> {
-    let mut app = QuantaApplication::new()?;
+    let mut app = BuildApplication::new()?;
     app.run();
     Ok(())
 }

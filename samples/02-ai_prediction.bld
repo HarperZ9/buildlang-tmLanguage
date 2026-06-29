@@ -18,7 +18,7 @@ use oracle::{
     PropheticEnsemble, AnomalyDetector, BayesianInference
 }
 use axiom::{
-    QuantaEvolution, Population, Genome, Fitness,
+    BuildEvolution, Population, Genome, Fitness,
     DifferentiableAST, DualNumber, NeuralArchitectureSearch,
     GeneticOperator, Crossover, Mutation
 }
@@ -35,7 +35,7 @@ use wavelength::{AudioProcessor, VideoProcessor, SignalAnalyzer}
 /// Comprehensive AI prediction engine combining multiple techniques
 pub struct AIPredictionEngine {
     oracle: PropheticEnsemble,
-    axiom: QuantaEvolution,
+    axiom: BuildEvolution,
     ml_ensemble: MLEnsemble,
     anomaly_detector: AnomalyDetector,
     config: PredictionConfig,
@@ -74,8 +74,8 @@ impl AIPredictionEngine {
         oracle.add_model(Box::new(GaussianProcess::new()));
         println!("  Oracle: {} models in ensemble", config.ensemble_size);
 
-        // Create Quanta Evolution for hyperparameter optimization
-        let axiom = QuantaEvolution::new(
+        // Create Build Evolution for hyperparameter optimization
+        let axiom = BuildEvolution::new(
             100,    // population
             0.1,    // mutation rate
             0.01,   // simplicity weight
@@ -198,7 +198,7 @@ impl AIPredictionEngine {
     }
 
     fn evolve_hyperparameters(&mut self, data: &TimeSeries) {
-        // Use Quanta Evolution Equation: ∂P/∂t = -∇L + η·Mutation + λ·Simplicity
+        // Use Build Evolution Equation: ∂P/∂t = -∇L + η·Mutation + λ·Simplicity
 
         for gen in 0..self.config.evolution_generations {
             let fitness = self.axiom.evolve_generation();
@@ -578,7 +578,7 @@ pub struct AudioAnalysisResult {
 fn main() {
     println!("╔═══════════════════════════════════════════════════════════════╗");
     println!("║  AI Prediction System Demo                                    ║");
-    println!("║  Powered by QUANTA-UNIVERSE                                   ║");
+    println!("║  Powered by BUILD-UNIVERSE                                   ║");
     println!("╚═══════════════════════════════════════════════════════════════╝");
     println!();
 
