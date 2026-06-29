@@ -469,7 +469,7 @@ pub struct Scene {
 fn main() {
     println!("╔═══════════════════════════════════════════════════════════════╗");
     println!("║  Graphics Pipeline Demo                                       ║");
-    println!("║  Powered by QUANTA-UNIVERSE                                   ║");
+    println!("║  Powered by BUILD-UNIVERSE                                   ║");
     println!("╚═══════════════════════════════════════════════════════════════╝");
     println!();
 

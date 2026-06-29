@@ -14,7 +14,7 @@ jobs:
           python-version: "3.11"
       - name: Validate grammar files
         run: |
-          python -m json.tool grammars/quantalang.tmLanguage.json > /dev/null
+          python -m json.tool grammars/buildlang.tmLanguage.json > /dev/null
           python -m json.tool language-configuration.json > /dev/null
       - name: Check whitespace
         run: git diff --check
