@@ -1,10 +1,10 @@
-# AGENTS.md - QuantaLang TextMate Grammar
+# AGENTS.md - BuildLang TextMate Grammar
 
 ## Scope
 
-This file applies to the `quantalang-tmLanguage` repository. Root workspace
+This file applies to the `buildlang-tmLanguage` repository. Root workspace
 instructions still apply; this repo is a public syntax-highlighting grammar for
-QuantaLang.
+BuildLang.
 
 ## Product Boundary
 
@@ -12,17 +12,17 @@ This repository owns the standalone TextMate grammar package used by
 TextMate-compatible editors and downstream tooling such as GitHub Linguist.
 
 Language semantics, compiler behavior, backend maturity, and semantic-corpus
-receipts live in `HarperZ9/quantalang`. The VS Code extension package lives in
-`HarperZ9/quantalang-vscode`. Keep this grammar aligned with those repositories,
+receipts live in `HarperZ9/buildlang`. The VS Code extension package lives in
+`HarperZ9/buildlang-vscode`. Keep this grammar aligned with those repositories,
 but keep this repo focused on grammar, language configuration, samples, and
 public documentation.
 
 Publishable surfaces:
 
-- `grammars/quantalang.tmLanguage.json` - TextMate grammar definition.
+- `grammars/buildlang.tmLanguage.json` - TextMate grammar definition.
 - `language-configuration.json` - comments, brackets, surrounding pairs, and
   editor behavior metadata.
-- `samples/` - representative `.quanta` files for language detection and
+- `samples/` - representative `.bld` files for language detection and
   highlighting checks.
 - `README.md`, `AUTHORS.md`, `LICENSE`.
 
@@ -46,7 +46,7 @@ Keep local-only:
 For docs or grammar-boundary changes:
 
 ```powershell
-python -m json.tool grammars/quantalang.tmLanguage.json
+python -m json.tool grammars/buildlang.tmLanguage.json
 python -m json.tool language-configuration.json
 git diff --check
 ```

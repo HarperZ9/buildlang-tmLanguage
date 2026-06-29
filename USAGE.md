@@ -1,35 +1,35 @@
-# Using the QuantaLang TextMate Grammar
+# Using the BuildLang TextMate Grammar
 
 This repository is an **editor-facing TextMate grammar**, not a compiler or a
 runnable program. There is no CLI to install and no library to import. "Using"
 this package means installing the grammar into a TextMate-compatible editor (or
-consuming it as a vendored grammar) so that `.quanta` source files get syntax
+consuming it as a vendored grammar) so that `.bld` source files get syntax
 highlighting.
 
-The compiler and language semantics (including any `quantac` command) live in a
-separate repository, [`HarperZ9/quantalang`](https://github.com/HarperZ9/quantalang).
-This package only describes how `.quanta` text is tokenized for highlighting.
+The compiler and language semantics (including any `buildc` command) live in a
+separate repository, [`HarperZ9/buildlang`](https://github.com/HarperZ9/buildlang).
+This package only describes how `.bld` text is tokenized for highlighting.
 
 ## What the package provides
 
 | File | Purpose |
 |------|---------|
-| `grammars/quantalang.tmLanguage.json` | The TextMate grammar (scope name `source.quanta`, file type `.quanta`) |
+| `grammars/buildlang.tmLanguage.json` | The TextMate grammar (scope name `source.bld`, file type `.bld`) |
 | `language-configuration.json` | Comment tokens, brackets, auto-closing/surrounding pairs, folding markers |
-| `samples/` | Representative `.quanta` files used for language detection and highlighting checks |
+| `samples/` | Representative `.bld` files used for language detection and highlighting checks |
 
 The grammar registers:
 
-- Scope name: `source.quanta`
-- File extension: `.quanta`
+- Scope name: `source.bld`
+- File extension: `.bld`
 
 ## Install / use
 
 ### VS Code
 
-Install the [QuantaLang VS Code extension](https://marketplace.visualstudio.com/items?itemName=HarperZ9.quantalang),
+Install the [BuildLang VS Code extension](https://marketplace.visualstudio.com/items?itemName=HarperZ9.buildlang),
 which bundles this grammar. No manual file copying is needed; opening any
-`.quanta` file is highlighted automatically.
+`.bld` file is highlighted automatically.
 
 ### Sublime Text (ST4+)
 
@@ -38,16 +38,16 @@ your `Packages/User` directory:
 
 ```bash
 # macOS example path; adjust for your OS
-cp grammars/quantalang.tmLanguage.json \
+cp grammars/buildlang.tmLanguage.json \
   "$HOME/Library/Application Support/Sublime Text/Packages/User/"
 ```
 
-Open a `.quanta` file; Sublime maps the `source.quanta` scope to your color
+Open a `.bld` file; Sublime maps the `source.bld` scope to your color
 scheme automatically.
 
 ### TextMate / other TextMate-compatible editors
 
-Place `grammars/quantalang.tmLanguage.json` (and, where the editor supports it,
+Place `grammars/buildlang.tmLanguage.json` (and, where the editor supports it,
 `language-configuration.json`) in the editor's grammar/bundle directory. The
 exact location is editor-specific; consult that editor's grammar/bundle docs.
 
@@ -55,7 +55,7 @@ exact location is editor-specific; consult that editor's grammar/bundle docs.
 
 This repository is intended to be vendored by
 [`github-linguist/linguist`](https://github.com/github-linguist/linguist) under
-`vendor/grammars/quantalang-tmLanguage`. Consumers of GitHub do not install
+`vendor/grammars/buildlang-tmLanguage`. Consumers of GitHub do not install
 anything; the `samples/` files drive language detection.
 
 ## Validating and packaging the grammar
@@ -67,7 +67,7 @@ These are the genuine commands this repo uses (mirrored from CI in
 ### Validate the JSON files
 
 ```bash
-python -m json.tool grammars/quantalang.tmLanguage.json > /dev/null
+python -m json.tool grammars/buildlang.tmLanguage.json > /dev/null
 python -m json.tool language-configuration.json > /dev/null
 ```
 
@@ -87,24 +87,24 @@ conflict-marker issues in the working tree.
 
 ### Build the source package (what the release workflow does)
 
-The `release-artifacts` workflow builds `dist/quantalang-tmLanguage-0.1.0.zip`
+The `release-artifacts` workflow builds `dist/buildlang-tmLanguage-0.1.0.zip`
 from the publishable files using a short Python script. The committed
-`dist/quantalang-tmLanguage-0.1.0.zip` is the result of that workflow.
+`dist/buildlang-tmLanguage-0.1.0.zip` is the result of that workflow.
 
 See `.github/workflows/release-artifacts.yml` for the exact build step.
 
 ## Worked examples (highlighting)
 
-The grammar maps QuantaLang constructs to TextMate scopes. The examples below
+The grammar maps BuildLang constructs to TextMate scopes. The examples below
 show which scope a given token receives, taken directly from
-`grammars/quantalang.tmLanguage.json`. These are illustrative of the grammar's
+`grammars/buildlang.tmLanguage.json`. These are illustrative of the grammar's
 behavior, not output from a tokenizer run.
 
 ### Example 1 — keywords and effect/AI primitives
 
 Source:
 
-```quanta
+```build
 fn handle_request() {
     let x = perform infer();
 }
@@ -112,47 +112,47 @@ fn handle_request() {
 
 Resulting scopes (illustrative):
 
-- `fn` -> `keyword.other.fn.quanta`
-- `let` -> `storage.type.quanta`
-- `perform` -> `keyword.other.effect.quanta`
-- `infer` -> `keyword.other.ai.quanta`
-- `handle_request` (after `fn`) -> `entity.name.function.quanta`
+- `fn` -> `keyword.other.fn.bld`
+- `let` -> `storage.type.bld`
+- `perform` -> `keyword.other.effect.bld`
+- `infer` -> `keyword.other.ai.bld`
+- `handle_request` (after `fn`) -> `entity.name.function.bld`
 
 ### Example 2 — types and primitives
 
 Source:
 
-```quanta
+```build
 let buf: Vec<u8> = Vec::new();
 ```
 
 Resulting scopes (illustrative):
 
-- `Vec`, `u8` -> `storage.type.primitive.quanta`
+- `Vec`, `u8` -> `storage.type.primitive.bld`
 - A capitalized identifier not in the primitive list (e.g. a user type
-  `Color`) -> `entity.name.type.quanta`
+  `Color`) -> `entity.name.type.bld`
 
 ### Example 3 — numbers and string interpolation
 
 Source:
 
-```quanta
+```build
 let n = 0xFF_u32;
 let s = "value is {n}";
 ```
 
 Resulting scopes (illustrative):
 
-- `0xFF_u32` -> `constant.numeric.hex.quanta`
-- The `"..."` body -> `string.quoted.double.quanta`
-- `{n}` inside the string -> `meta.interpolation.quanta`, with `n` as
-  `variable.other.quanta`
+- `0xFF_u32` -> `constant.numeric.hex.bld`
+- The `"..."` body -> `string.quoted.double.bld`
+- `{n}` inside the string -> `meta.interpolation.bld`, with `n` as
+  `variable.other.bld`
 
 ### Example 4 — comments and attributes
 
 Source:
 
-```quanta
+```build
 /// Doc comment
 #[derive(Clone)]
 struct Color {}
@@ -160,10 +160,10 @@ struct Color {}
 
 Resulting scopes (illustrative):
 
-- `/// Doc comment` -> `comment.line.documentation.quanta`
-- `#[derive(Clone)]` -> `meta.attribute.quanta` (with `derive` as
-  `entity.name.tag.quanta`)
-- `struct` -> `storage.type.quanta`
+- `/// Doc comment` -> `comment.line.documentation.bld`
+- `#[derive(Clone)]` -> `meta.attribute.bld` (with `derive` as
+  `entity.name.tag.bld`)
+- `struct` -> `storage.type.bld`
 
 To see highlighting end-to-end, open any file in `samples/` (or
-`examples/demo.quanta`) in an editor that has the grammar installed.
+`examples/demo.bld`) in an editor that has the grammar installed.
