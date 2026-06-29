@@ -1,21 +1,21 @@
 // Best-effort demo — not runtime-verified by author.
 //
-// This is a QuantaLang source file whose only purpose here is to exercise the
-// TextMate grammar in this repository (grammars/quantalang.tmLanguage.json).
+// This is a BuildLang source file whose only purpose here is to exercise the
+// TextMate grammar in this repository (grammars/buildlang.tmLanguage.json).
 // Open it in an editor that has the grammar installed to see highlighting for
 // the constructs the grammar recognizes. It is NOT compiled or run by this
-// package — the compiler lives in HarperZ9/quantalang.
+// package — the compiler lives in HarperZ9/buildlang.
 //
 // Constructs exercised below (with the scope the grammar assigns):
-//   - doc comments        -> comment.line.documentation.quanta
-//   - attributes          -> meta.attribute.quanta
-//   - storage types       -> storage.type.quanta (struct, enum, let, const, ...)
-//   - primitive types     -> storage.type.primitive.quanta (u8, f64, Vec, ...)
-//   - effect keywords     -> keyword.other.effect.quanta (with, effect, perform, ...)
-//   - AI primitives       -> keyword.other.ai.quanta (ai, neural, infer)
-//   - numbers             -> constant.numeric.*.quanta (hex, float, integer, ...)
-//   - string interpolation-> meta.interpolation.quanta
-//   - macros              -> entity.name.function.macro.quanta (println!, ...)
+//   - doc comments        -> comment.line.documentation.bld
+//   - attributes          -> meta.attribute.bld
+//   - storage types       -> storage.type.bld (struct, enum, let, const, ...)
+//   - primitive types     -> storage.type.primitive.bld (u8, f64, Vec, ...)
+//   - effect keywords     -> keyword.other.effect.bld (with, effect, perform, ...)
+//   - AI primitives       -> keyword.other.ai.bld (ai, neural, infer)
+//   - numbers             -> constant.numeric.*.bld (hex, float, integer, ...)
+//   - string interpolation-> meta.interpolation.bld
+//   - macros              -> entity.name.function.macro.bld (println!, ...)
 
 use foundation::io::println
 

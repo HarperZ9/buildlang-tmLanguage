@@ -1,5 +1,5 @@
-// QuantaLang ACES Tone Mapping Shader
-// Compile to HLSL: quantac tonemap.quanta --target hlsl -o tonemap.hlsl
+// BuildLang ACES Tone Mapping Shader
+// Compile to HLSL: buildc tonemap.bld --target hlsl -o tonemap.hlsl
 // Drop into ReShade shader folder and use immediately
 
 fn aces_tonemap(x: f64) -> f64 {

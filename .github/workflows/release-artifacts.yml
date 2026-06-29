@@ -16,7 +16,7 @@ jobs:
           python-version: "3.11"
       - name: Validate grammar files
         run: |
-          python -m json.tool grammars/quantalang.tmLanguage.json > /dev/null
+          python -m json.tool grammars/buildlang.tmLanguage.json > /dev/null
           python -m json.tool language-configuration.json > /dev/null
       - name: Build source package
         run: |
@@ -38,7 +38,7 @@ jobs:
               "RELEASE.md",
               "language-configuration.json",
           ]
-          with ZipFile(dist / "quantalang-tmLanguage-0.1.0.zip", "w", ZIP_DEFLATED) as zf:
+          with ZipFile(dist / "buildlang-tmLanguage-0.1.0.zip", "w", ZIP_DEFLATED) as zf:
               for item in include_roots:
                   path = root / item
                   if path.is_dir():
@@ -50,5 +50,5 @@ jobs:
           PY
       - uses: actions/upload-artifact@v5
         with:
-          name: quantalang-tmLanguage-source-package
-          path: dist/quantalang-tmLanguage-0.1.0.zip
+          name: buildlang-tmLanguage-source-package
+          path: dist/buildlang-tmLanguage-0.1.0.zip
