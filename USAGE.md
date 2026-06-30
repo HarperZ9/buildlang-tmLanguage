@@ -7,7 +7,7 @@ consuming it as a vendored grammar) so that `.bld` source files get syntax
 highlighting.
 
 The compiler and language semantics (including any `buildc` command) live in a
-separate repository, [`HarperZ9/buildlang`](https://github.com/HarperZ9/buildlang).
+separate repository, [`BuildLang compiler`](https://github.com/HarperZ9/quantalang).
 This package only describes how `.bld` text is tokenized for highlighting.
 
 ## What the package provides
@@ -100,7 +100,7 @@ show which scope a given token receives, taken directly from
 `grammars/buildlang.tmLanguage.json`. These are illustrative of the grammar's
 behavior, not output from a tokenizer run.
 
-### Example 1 — keywords and effect/AI primitives
+### Example 1 -- keywords and effect/AI primitives
 
 Source:
 
@@ -118,7 +118,7 @@ Resulting scopes (illustrative):
 - `infer` -> `keyword.other.ai.bld`
 - `handle_request` (after `fn`) -> `entity.name.function.bld`
 
-### Example 2 — types and primitives
+### Example 2 -- types and primitives
 
 Source:
 
@@ -132,7 +132,7 @@ Resulting scopes (illustrative):
 - A capitalized identifier not in the primitive list (e.g. a user type
   `Color`) -> `entity.name.type.bld`
 
-### Example 3 — numbers and string interpolation
+### Example 3 -- numbers and string interpolation
 
 Source:
 
@@ -148,7 +148,7 @@ Resulting scopes (illustrative):
 - `{n}` inside the string -> `meta.interpolation.bld`, with `n` as
   `variable.other.bld`
 
-### Example 4 — comments and attributes
+### Example 4 -- comments and attributes
 
 Source:
 

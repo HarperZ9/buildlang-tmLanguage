@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">BuildLang TextMate grammar hero</title>
+  <desc id="desc">A dark editor grid with highlighted BuildLang tokens and TextMate scopes for .bld files.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09111f"/>
+      <stop offset="1" stop-color="#172136"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00b3a4"/>
+      <stop offset="0.55" stop-color="#6d83ff"/>
+      <stop offset="1" stop-color="#f0b65a"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="28" fill="url(#panel)"/>
+  <rect x="54" y="54" width="1092" height="312" rx="18" fill="#0e1728" stroke="#263754"/>
+  <path d="M106 118h988M106 176h988M106 234h988M106 292h988" stroke="#20304c" stroke-width="2"/>
+  <path d="M238 82v252M430 82v252M626 82v252M818 82v252M1014 82v252" stroke="#1b2943" stroke-width="2"/>
+  <circle cx="196" cy="208" r="136" fill="#00b3a4" opacity="0.14" filter="url(#soft)"/>
+  <circle cx="918" cy="188" r="158" fill="#6d83ff" opacity="0.16" filter="url(#soft)"/>
+  <rect x="118" y="104" width="166" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="314" y="104" width="262" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="606" y="104" width="184" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="820" y="104" width="242" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="118" y="220" width="208" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="356" y="220" width="154" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <rect x="540" y="220" width="314" height="42" rx="10" fill="#16243b" stroke="#2d436b"/>
+  <text x="118" y="78" fill="#cdd8f4" font-family="Consolas, 'SFMono-Regular', monospace" font-size="22">source.build</text>
+  <text x="138" y="132" fill="#57e1d4" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">fn main</text>
+  <text x="336" y="132" fill="#f0b65a" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">effect Console</text>
+  <text x="628" y="132" fill="#b9c1ff" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">perform</text>
+  <text x="842" y="132" fill="#e7edf8" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">println!</text>
+  <text x="138" y="248" fill="#cdd8f4" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">.bld files</text>
+  <text x="378" y="248" fill="#57e1d4" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">types</text>
+  <text x="562" y="248" fill="#f0b65a" font-family="Consolas, 'SFMono-Regular', monospace" font-size="24">TextMate scopes</text>
+  <text x="118" y="348" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">BuildLang TextMate Grammar</text>
+  <rect x="890" y="318" width="204" height="20" rx="10" fill="url(#accent)"/>
+</svg>
