@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/brand/buildlang-tmLanguage-hero.png" alt="Buildlang Tmlanguage: Editor Syntax Grammar">
+</p>
+
 # BuildLang TextMate Grammar
 
 > The editor-facing TextMate grammar that teaches syntax highlighters how to read `.bld` files.
