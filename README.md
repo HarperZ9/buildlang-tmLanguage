@@ -55,6 +55,10 @@ The compiler and any `buildc` command live in the separate
 [`HarperZ9/buildlang`](https://github.com/HarperZ9/buildlang) repository, not
 here.
 
+The browser evidence example is an editor fixture only. It documents Telos
+workflow vocabulary for highlighting and examples; this package does not compile
+or execute browser automation.
+
 ## Using this grammar
 
 ### VS Code
