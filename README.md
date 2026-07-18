@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/brand/buildlang-tmLanguage-hero.png" alt="Buildlang Tmlanguage: Editor Syntax Grammar">
+  <img src=".github/assets/zentropy-banner.png" alt="Buildlang Tmlanguage: Editor Syntax Grammar">
 </p>
 
 # BuildLang TextMate Grammar
@@ -80,3 +80,7 @@ This repository is included as a submodule by `github-linguist/linguist` under `
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+---
+
+**[Zentropy Labs](https://github.com/ZentropyLabs-ai)** · order out of entropy. An independent lab building evidence-first tools that leave a re-checkable artifact behind. Built by Zain Dana Harper in Seattle. The full workbench is at [Project Telos](https://harperz9.github.io).
