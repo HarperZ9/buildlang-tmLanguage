@@ -6,3 +6,6 @@ out/
 dist/
 *.log
 *.tmp
+
+# Local-only Claude instructions (global standard: never commit)
+CLAUDE.local.md
