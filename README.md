@@ -1,17 +1,15 @@
-<p align="center">
-  <img src=".github/assets/banner.png" alt="Buildlang Tmlanguage: Editor Syntax Grammar">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarperZ9/buildlang-tmLanguage/main/docs/art/hero-dark.svg">
+  <img src="https://raw.githubusercontent.com/HarperZ9/buildlang-tmLanguage/main/docs/art/hero-light.svg" alt="buildlang-tmLanguage: TextMate grammar that highlights BuildLang .bld files in editors. A fine lattice of lines bulges outward around a bright core, as if seen through a lens, inside a ring." width="100%">
+</picture>
 
-# BuildLang TextMate Grammar
+# buildlang-tmLanguage
 
-> The editor-facing TextMate grammar that teaches syntax highlighters how to read `.bld` files.
+TextMate grammar that highlights BuildLang .bld files in editors.
 
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![grammar](https://img.shields.io/badge/grammar-TextMate-blue.svg)
-![version](https://img.shields.io/badge/version-0.1.0-informational.svg)
+[![version: 0.1.0](https://img.shields.io/badge/version-0.1.0-e6e1d6?style=flat-square&labelColor=1a1712)](https://github.com/HarperZ9/buildlang-tmLanguage/releases/latest)
 [![CI](https://github.com/HarperZ9/buildlang-tmLanguage/actions/workflows/ci.yml/badge.svg)](https://github.com/HarperZ9/buildlang-tmLanguage/actions/workflows/ci.yml)
-![deps: none](https://img.shields.io/badge/deps-none-success.svg)
-[![part of: Build ecosystem](https://img.shields.io/badge/part_of-Build_ecosystem-00b3a4.svg)](https://github.com/HarperZ9/build-universe)
+[![license](https://img.shields.io/badge/license-MIT-e6e1d6?style=flat-square&labelColor=1a1712)](https://github.com/HarperZ9/buildlang-tmLanguage/blob/main/LICENSE)
 
 Official TextMate grammar for **[BuildLang](https://github.com/HarperZ9/buildlang)**.
 This is the small editor-facing layer that teaches syntax highlighters how to
