@@ -65,7 +65,7 @@ or execute browser automation.
 
 ### VS Code
 
-Install the [BuildLang VS Code extension](https://marketplace.visualstudio.com/items?itemName=HarperZ9.buildlang) - it bundles this grammar.
+Install the [BuildLang VS Code extension](https://marketplace.visualstudio.com/items?itemName=HarperZ9.quantalang) - it bundles this grammar. The Marketplace listing still carries the earlier name, QuantaLang.
 
 ### Sublime Text / TextMate
 
